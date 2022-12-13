@@ -36,7 +36,7 @@ p {
 
 .header {
     position: relative; /* Deixa o elemento relativo aos demais */
-    background-color: rgb(185, 3, 3);/* Definir a cor de fundo do cabeçalho*/
+    background-color: rgb(180, 27, 27);/* Definir a cor de fundo do cabeçalho*/
     width: 100%; /* Largura do menu de navegação 100% */
     height: 100vh;/*Altura de 40 em rem (medida universal)*/
     top: 0;/*remove o espaçamento de cima*/
@@ -64,9 +64,9 @@ nav ul {
     width: 30px; /* Largura de 30px */
     height: 30px; /* Altura de 30px */
     right: 2rem; /* Mover o elemento 2rem para a esquerda */
-    position: absolute; /* A */
-    top: 0.5rem ;
-    transition: all 200ms ease-in-out;
+    position: absolute; /* Sobrepor os demais elemento deixando ele absoluto na tela */
+    top: 0.5rem ; /* Mover a aultura do elemento 0.5rem a cima */
+    transition: all 200ms ease-in-out; /* Aplicar uma transição de 200 milissegundo */
 }
 
 .img-logo-nav img:hover {
@@ -113,6 +113,7 @@ nav>ul>li:hover {
     margin: auto; /* Deixar o computador ajustar a margem automático */
     height: 18%; /* Aplicar uma altura de 18% */
     margin-top: 3rem; /* Aplicar uma margem de 3rem ao topo  */ 
+    margin-bottom: 3rem;
 }
 
 /* A parte do carrousel inteira */
@@ -131,6 +132,24 @@ nav>ul>li:hover {
     float: left; /* Faz a imagem dentro do carrosel flutuar para a esquerda*/
 }
 
+.fotos {
+    margin: auto !important; /* Ajustar a margem da DIV automatica (Alinhar no centro) */
+    padding: 10px; /* Espaçamento de 10 pixels */
+    border-radius: 1rem; /* Aplicar um raio de 1 rem para a borda */
+}
+
+.fotos-container {
+    gap: 1rem; /* Espaço entre as fotos (Vão) */
+    margin: auto;
+}
+
+.fotos-container img {
+    width: 300px;/* Aplicar uma largura a foto de 19% */
+    height: 220px; /* Aplicar uma largura a foto de 19% */
+    border: 3px solid rgba(146, 12, 12, 0.87); /* Aplicar uma borda de 3 pixels */
+    border-radius: 1rem; /* Aplicar um raio de 1 rem para a borda */
+}
+
 /* Animção do Carrosel */ 
 
 /*Infelizmente não achei um jeito comentar este bloco, mas ele só tem uma abjetividade, animar o slider*/
@@ -147,7 +166,7 @@ nav>ul>li:hover {
 }
 
 /*Diminuir a fonte do Menu de navegação de acordo com a largura do seu dispositivo (Deixar responsivo)*/
-@media only screen and (max-width: 610px) { /* Inclui uma regra de CSS para quando o dispositivo chegar no tamanho 610px ou menor ele aplica um estilo específico */
+@media only screen and (max-width: 640px) { /* Inclui uma regra de CSS para quando o dispositivo chegar no tamanho 610px ou menor ele aplica um estilo específico */
     nav ul {
         font-size: 2vh; /* Tamanho da fonte de 2vh (A medida vh é igual a 1/100 da altura do navegador, 1vh equivale a 9px) */
     }
@@ -160,7 +179,6 @@ nav>ul>li:hover {
 
     .title h2 {
         font-size: 18px; /* Tamanho da fonte de 18 pixels */
-
     }
 
     .textos p {
@@ -174,8 +192,8 @@ nav>ul>li:hover {
     }
 
     .textos h1 {
-     font-size: 30px!important; /* Tamanho da fonte do titulo */
-     text-align: center; /* Alinhar o titulo no centro */
+        font-size: 30px!important; /* Tamanho da fonte do titulo */
+        text-align: center; /* Alinhar o titulo no centro */
     }
 
     .foto img {
@@ -199,7 +217,34 @@ nav>ul>li:hover {
     .slider {
         width: 80%; /* Largura de 80% do Carrousel para responsivo */
     }
+
+    .fotos {
+        display: table;
+       
+    }
+
+    .fotos img {
+        width: 50%;
+        height: auto;
+        margin-left: 25% !important;
+        border-radius: 0rem;
+        border: 2px solid rgba(146, 12, 12, 0.87);
+    }
+
+    .fotos-container {
+        margin: 5% !important;
+        gap: 2rem;
+    }
+
+    .fotos h1 {
+        font-size: 2vh !important;
+    }
 }
+
+    footer p {
+        font-size: 2vh;
+
+    }
 
 /*Barra de rolagem do site*/
 
@@ -214,6 +259,7 @@ nav>ul>li:hover {
 }
 
 /*Estilo da barra de rolagem*/
+
 ::-webkit-scrollbar-thumb {
     border-radius: 16px; /* Aplicar um ângulo de 16px na borda  */
     background: rgba(146, 12, 12, 0.87) /* Definir a cor de fundo* */
@@ -221,12 +267,12 @@ nav>ul>li:hover {
 
 /*Botão de atalho para subir o site*/
 .open-button {
-    display: none; /* Não mostra o elemnto da tela */
-    opacity: 0; /* Remove a opcidade */
+    display: none; /* Não mostrar o elemento da tela */
+    opacity: 0; /* Remover a opcidade */
     border: none; /* Remover a borda do botão */
     cursor: pointer; /* Aplicar o ponteiro no elemento */
-    opacity: 0.8; /* Opacidade */
-    position: fixed; /* Deixar a Posição fixada */
+    opacity: 0.8; /* Opacidade Opacidade */
+    position: fixed; /* Deixar a posição fixada a tela */
     bottom: 23px; /* Deixar o inferior do elemento com 23 pixels */
     right: 0px; /* Espaçamento à Direita */
     width: 40px; /* Largura de 40 pixels */
